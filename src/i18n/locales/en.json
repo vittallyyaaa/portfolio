@@ -6,5 +6,13 @@
   },
   "header": {
     "language": "UA"
+  },
+  "hero": {
+  "badge": "Available for new projects",
+  "title": "Hi, I’m Vitalii",
+  "accent": "Frontend Developer",
+  "description": "I build modern, responsive and user-friendly web interfaces using React, TypeScript, HTML, CSS and JavaScript.",
+  "projects": "View projects",
+  "contact": "Contact me"
   }
 }
