@@ -5,8 +5,10 @@ import "./styles/global.css";
 import "./styles/variables.css";
 import "./styles/reset.css";
 
-
 import App from './App'
+
+import "./i18n/i18n";
+import "./styles/global.css";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -1,13 +1,9 @@
 :root {
   --color-bg: #111111;
   --color-surface: #1a1a1a;
-
-  --color-primary: #7a1f2b;
-  --color-primary-hover: #912636;
-
+  --color-primary: #b11226;
   --color-text: #ffffff;
   --color-text-secondary: #b3b3b3;
-
   --color-border: #2a2a2a;
 
   --container-width: 1200px;
@@ -15,6 +11,15 @@
   --transition: 0.3s ease;
 
   /* Шрифт */
-  
-    --font-heading: "Unbounded", sans-serif;
+
+  --font-heading: "Unbounded", sans-serif;
+}
+
+[data-theme="light"] {
+  --color-bg: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-primary: #b11226;
+  --color-text: #111111;
+  --color-text-secondary: #555555;
+  --color-border: #dddddd;
 }

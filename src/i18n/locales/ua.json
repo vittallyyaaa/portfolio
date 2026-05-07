@@ -1,0 +1,10 @@
+{
+  "nav": {
+    "about": "Про мене",
+    "projects": "Проєкти",
+    "contact": "Контакти"
+  },
+  "header": {
+    "language": "EN"
+  }
+}

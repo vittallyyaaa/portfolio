@@ -1,0 +1,10 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "header": {
+    "language": "UA"
+  }
+}
