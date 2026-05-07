@@ -1,6 +1,6 @@
 {
   "nav": {
-    "about": "About",
+    "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact"
   },
@@ -14,5 +14,59 @@
   "description": "I build modern, responsive and user-friendly web interfaces using React, TypeScript, HTML, CSS and JavaScript.",
   "projects": "View projects",
   "contact": "Contact me"
+  },
+  "tech": {
+  "label": "Tech Orbit",
+  "title": "My stack in",
+  "titleAccent": "motion",
+  "subtitle": "Click on a technology to explore how I use it in real frontend projects.",
+  "coreSmall": "Frontend",
+  "coreTitle": "Core",
+  "selected": "Selected technology",
+  "terminal": "tech.preview",
+  "items": {
+    "react": {
+      "name": "React",
+      "level": "Practicing",
+      "description": "I use React to build interactive interfaces with reusable components, hooks and clean page structure.",
+      "tags": ["Components", "Hooks", "SPA", "State"],
+      "code": "function Portfolio() {\n  return <TechOrbit />;\n}"
+    },
+    "typescript": {
+      "name": "TypeScript",
+      "level": "Learning",
+      "description": "I use TypeScript to make JavaScript code clearer, safer and easier to maintain.",
+      "tags": ["Types", "Interfaces", "Props", "Safety"],
+      "code": "interface Project {\n  title: string;\n  stack: string[];\n}"
+    },
+    "javascript": {
+      "name": "JavaScript",
+      "level": "Confident",
+      "description": "I use JavaScript for dynamic UI behavior, data rendering, events and API work.",
+      "tags": ["Events", "API", "Logic", "DOM"],
+      "code": "const activeTech = techs.find(\n  tech => tech.name === 'React'\n);"
+    },
+    "css": {
+      "name": "CSS / SCSS",
+      "level": "Confident",
+      "description": "I create responsive layouts, animations, themes and clean visual systems.",
+      "tags": ["Responsive", "Animations", "Themes", "Modules"],
+      "code": ".card:hover {\n  transform: translateY(-6px);\n}"
+    },
+    "git": {
+      "name": "Git",
+      "level": "Practicing",
+      "description": "I use Git and GitHub to manage project history, repositories and deployment.",
+      "tags": ["Commits", "GitHub", "Deploy", "Workflow"],
+      "code": "git add .\ngit commit -m \"Update portfolio\"\ngit push"
+    },
+    "vite": {
+      "name": "Vite",
+      "level": "Practicing",
+      "description": "I use Vite for fast React setup, development server and optimized production builds.",
+      "tags": ["React", "Build", "Dev Server", "Fast"],
+      "code": "npm create vite@latest . -- --template react-ts"
+    }
+    }
   }
 }

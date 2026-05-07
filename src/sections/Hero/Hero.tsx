@@ -5,7 +5,7 @@ function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="home">
       <div className={styles.container}>
         <div className={styles.content}>
           <p className={styles.badge}>{t("hero.badge")}</p>

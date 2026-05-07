@@ -1,6 +1,6 @@
 {
   "nav": {
-    "about": "Про мене",
+    "skills": "Навички",
     "projects": "Проєкти",
     "contact": "Контакти"
   },
@@ -14,5 +14,59 @@
   "description": "Створюю сучасні, адаптивні та зручні вебінтерфейси на React, TypeScript, HTML, CSS і JavaScript.",
   "projects": "Переглянути проєкти",
   "contact": "Зв’язатися"
+  },
+  "tech": {
+  "label": "Tech Orbit",
+  "title": "Мій стек у",
+  "titleAccent": "русі",
+  "subtitle": "Натисни на технологію, щоб побачити, як я використовую її у frontend-проєктах.",
+  "coreSmall": "Frontend",
+  "coreTitle": "Core",
+  "selected": "Обрана технологія",
+  "terminal": "tech.preview",
+  "items": {
+    "react": {
+      "name": "React",
+      "level": "Практикую",
+      "description": "Використовую React для створення інтерактивних інтерфейсів, багаторазових компонентів, хуків і чистої структури сторінок.",
+      "tags": ["Компоненти", "Hooks", "SPA", "State"],
+      "code": "function Portfolio() {\n  return <TechOrbit />;\n}"
+    },
+    "typescript": {
+      "name": "TypeScript",
+      "level": "Вивчаю",
+      "description": "Використовую TypeScript, щоб робити JavaScript-код зрозумілішим, безпечнішим і зручнішим для підтримки.",
+      "tags": ["Types", "Interfaces", "Props", "Safety"],
+      "code": "interface Project {\n  title: string;\n  stack: string[];\n}"
+    },
+    "javascript": {
+      "name": "JavaScript",
+      "level": "Впевнено",
+      "description": "Використовую JavaScript для динамічної логіки інтерфейсу, подій, рендерингу даних і роботи з API.",
+      "tags": ["Events", "API", "Logic", "DOM"],
+      "code": "const activeTech = techs.find(\n  tech => tech.name === 'React'\n);"
+    },
+    "css": {
+      "name": "CSS / SCSS",
+      "level": "Впевнено",
+      "description": "Створюю адаптивні layout-и, анімації, теми та чисті візуальні системи.",
+      "tags": ["Адаптив", "Анімації", "Теми", "Modules"],
+      "code": ".card:hover {\n  transform: translateY(-6px);\n}"
+    },
+    "git": {
+      "name": "Git",
+      "level": "Практикую",
+      "description": "Використовую Git і GitHub для історії змін, репозиторіїв, комітів і деплою сайту.",
+      "tags": ["Commits", "GitHub", "Deploy", "Workflow"],
+      "code": "git add .\ngit commit -m \"Update portfolio\"\ngit push"
+    },
+    "vite": {
+      "name": "Vite",
+      "level": "Практикую",
+      "description": "Використовую Vite для швидкого старту React-проєктів, локальної розробки й production build.",
+      "tags": ["React", "Build", "Dev Server", "Fast"],
+      "code": "npm create vite@latest . -- --template react-ts"
+    }
+  }
   }
 }

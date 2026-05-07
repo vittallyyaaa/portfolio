@@ -9,6 +9,7 @@ import styles from "./Header.module.css";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
+  const [hidden, setHidden] = useState(false);
 
   const { t, i18n } = useTranslation();
 
@@ -16,13 +17,37 @@ function Header() {
     const savedTheme = localStorage.getItem("theme") || "dark";
 
     document.documentElement.setAttribute("data-theme", savedTheme);
+
     setIsDark(savedTheme === "dark");
+  }, []);
+
+  useEffect(() => {
+    let lastScroll = 0;
+
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScroll && currentScroll > 120) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+
+      lastScroll = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const toggleTheme = () => {
     const nextTheme = isDark ? "light" : "dark";
 
     document.documentElement.setAttribute("data-theme", nextTheme);
+
     localStorage.setItem("theme", nextTheme);
 
     setIsDark(nextTheme === "dark");
@@ -32,19 +57,23 @@ function Header() {
     const nextLanguage = i18n.language === "en" ? "ua" : "en";
 
     i18n.changeLanguage(nextLanguage);
+
     localStorage.setItem("language", nextLanguage);
   };
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${hidden ? styles.hidden : ""}`}
+      onClick={() => setIsOpen(false)}
+    >
       <div className={styles.container}>
-        <a href="/" className={styles.logo}>
+        <a href="#home" className={styles.logo}>
           VM
         </a>
 
         <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ""}`}>
-          <a href="#about" onClick={() => setIsOpen(false)}>
-            {t("nav.about")}
+          <a href="#skills" onClick={() => setIsOpen(false)}>
+            {t("nav.skills")}
           </a>
 
           <a href="#projects" onClick={() => setIsOpen(false)}>
@@ -54,6 +83,7 @@ function Header() {
           <a href="#contact" onClick={() => setIsOpen(false)}>
             {t("nav.contact")}
           </a>
+
           <div className={styles.mobileActions}>
             <button
               className={`button-transparent ${styles.langButton}`}

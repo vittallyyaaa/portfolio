@@ -1,0 +1,220 @@
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.55;
+}
+
+/* circles */
+.circle {
+  border-radius: 50%;
+  background: rgba(177, 18, 38, 0.08);
+  filter: blur(1px);
+  animation: float 14s infinite ease-in-out;
+}
+
+.circle1 {
+  width: 220px;
+  height: 220px;
+  top: 12%;
+  left: -90px;
+}
+
+.circle2 {
+  width: 170px;
+  height: 170px;
+  right: -70px;
+  top: 16%;
+  animation-delay: 2s;
+}
+
+.circle3 {
+  width: 260px;
+  height: 260px;
+  right: -120px;
+  bottom: 8%;
+  animation-delay: 5s;
+}
+
+/* rings */
+.ring {
+  border-radius: 50%;
+  border: 1px solid rgba(177, 18, 38, 0.35);
+  animation: float 18s infinite ease-in-out;
+}
+
+.ring1 {
+  width: 90px;
+  height: 90px;
+  left: 4%;
+  bottom: 16%;
+}
+
+.ring2 {
+  width: 64px;
+  height: 64px;
+  right: 8%;
+  top: 46%;
+  animation-delay: 4s;
+}
+
+/* crosses */
+.cross {
+  width: 22px;
+  height: 22px;
+  animation: rotateFloat 14s infinite linear;
+}
+
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background: rgba(177, 18, 38, 0.45);
+  border-radius: 999px;
+}
+
+.cross::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cross::after {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cross1 {
+  top: 20%;
+  left: 6%;
+}
+
+.cross2 {
+  top: 12%;
+  right: 14%;
+  animation-delay: 3s;
+}
+
+.cross3 {
+  bottom: 22%;
+  right: 5%;
+  animation-delay: 6s;
+}
+
+.cross4 {
+  bottom: 10%;
+  left: 24%;
+  animation-delay: 8s;
+}
+
+/* dots */
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  animation: pulse 4s infinite ease-in-out;
+}
+
+.dot1 {
+  top: 34%;
+  left: 3%;
+}
+
+.dot2 {
+  top: 72%;
+  left: 10%;
+  animation-delay: 1s;
+}
+
+.dot3 {
+  top: 28%;
+  right: 5%;
+  animation-delay: 2s;
+}
+
+.dot4 {
+  bottom: 24%;
+  right: 18%;
+  animation-delay: 3s;
+}
+
+/* animations */
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -32px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes rotateFloat {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(180deg) translateY(-18px);
+  }
+
+  100% {
+    transform: rotate(360deg) translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: scale(1.8);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 768px) {
+  .circle1,
+  .ring1,
+  .cross1,
+  .dot1,
+  .dot2 {
+    left: -40px;
+  }
+
+  .circle2,
+  .circle3,
+  .ring2,
+  .cross2,
+  .cross3,
+  .dot3,
+  .dot4 {
+    right: -35px;
+  }
+
+  .cross4 {
+    display: none;
+  }
+}
