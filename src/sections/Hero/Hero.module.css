@@ -1,23 +1,30 @@
 .hero {
+  width: min(90%, var(--container-width));
+  margin: 50px auto 0;
+  padding: 80px 0;
+
   display: flex;
   align-items: center;
-  padding: 80px 0;
-  overflow: hidden;
-  margin-top: 30px;
+
 }
 
 .container {
-  width: min(90%, var(--container-width));
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  width: 100%;
+
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 64px;
-  
+}
+
+.content {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .badge {
   width: fit-content;
+  margin-bottom: 14px;
   padding: 10px 16px;
 
   border: 1px solid rgba(177, 18, 38, 0.4);
@@ -32,9 +39,11 @@
 
 .title {
   max-width: 760px;
+  margin: 0;
+
   font-family: var(--font-heading);
-  font-size: clamp(42px, 7vw, 86px);
-  line-height: 1.05;
+  font-size: clamp(40px, 6vw, 82px);
+  line-height: 1;
   letter-spacing: -0.04em;
 }
 
@@ -44,7 +53,7 @@
 
 .description {
   max-width: 620px;
-  margin-top: 24px;
+  margin-top: 22px;
 
   color: var(--color-text-secondary);
 
@@ -55,7 +64,7 @@
 .actions {
   display: flex;
   gap: 16px;
-  margin-top: 36px;
+  margin-top: 34px;
 }
 
 .primaryButton,
@@ -74,14 +83,16 @@
 }
 
 .primaryButton {
+  border: 1px solid var(--color-primary);
   background: var(--color-primary);
   color: #fff;
+
   box-shadow: 0 0 30px rgba(177, 18, 38, 0.35);
-  border: solid 1px var(--color-primary);
 }
 
 .primaryButton:hover {
-  background: var(--color-primary-hover);
+  color: var(--color-primary);
+  background-color: var(--color-bg);
 }
 
 .secondaryButton {
@@ -95,6 +106,9 @@
 }
 
 .card {
+  flex: 0 1 470px;
+  min-width: 0;
+
   position: relative;
   padding: 18px;
 
@@ -124,41 +138,172 @@
 .cardHeader span {
   width: 12px;
   height: 12px;
+
   border-radius: 50%;
+
   background: var(--color-primary);
   opacity: 0.8;
 }
 
 .card pre {
+  max-width: 100%;
   overflow-x: auto;
+
   color: var(--color-text);
+
   font-size: 15px;
   line-height: 1.8;
 }
 
-@media (max-width: 900px) {
+.card code {
+  white-space: pre;
+}
+
+/* tablets */
+@media (max-width: 1000px) {
   .hero {
-    min-height: auto;
     padding: 70px 0;
   }
 
   .container {
-    grid-template-columns: 1fr;
     gap: 42px;
   }
 
+  .title {
+    font-size: clamp(38px, 6vw, 64px);
+  }
+
   .card {
-    max-width: 100%;
+    flex-basis: 420px;
   }
 }
 
-@media (max-width: 520px) {
-  .actions {
+/* mobile */
+@media (max-width: 850px) {
+  .hero {
+    width: min(92%, var(--container-width));
+    padding: 56px 0;
+    margin-top: 50px;
+  }
+
+  .container {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .content,
+  .card {
+    width: 100%;
+  }
+
+  .card {
+    flex-basis: auto;
+  }
+}
+
+/* small mobile */
+@media (max-width: 520px) {
+  .hero {
+    width: 94%;
+    padding: 42px 0;
+  }
+
+  .badge {
+    margin-bottom: 12px;
+    padding: 8px 14px;
+
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: clamp(30px, 11vw, 46px);
+    letter-spacing: -0.03em;
+  }
+
+  .description {
+    margin-top: 16px;
+
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 26px;
   }
 
   .primaryButton,
   .secondaryButton {
     width: 100%;
+    min-height: 48px;
+
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .cardHeader {
+    margin-bottom: 14px;
+  }
+
+  .cardHeader span {
+    width: 10px;
+    height: 10px;
+  }
+
+  .card pre {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+}
+
+/* 320px support */
+@media (max-width: 360px) {
+  .hero {
+    width: 95%;
+    padding: 34px 0;
+  }
+
+  .container {
+    gap: 28px;
+  }
+
+  .badge {
+    padding: 7px 11px;
+    font-size: 11px;
+  }
+
+  .title {
+    font-size: 27px;
+    line-height: 1.05;
+  }
+
+  .description {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    min-height: 44px;
+    padding: 0 16px;
+
+    font-size: 13px;
+  }
+
+  .card {
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .card pre {
+    font-size: 10px;
+    line-height: 1.45;
   }
 }
