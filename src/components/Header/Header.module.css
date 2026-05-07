@@ -59,6 +59,10 @@
   border-radius: 10px;
 }
 
+.mobileActions {
+  display: none;
+} 
+
 @media (max-width: 768px) {
   .container {
     height: 70px;
